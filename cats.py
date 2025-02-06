@@ -1,5 +1,7 @@
 import os
 import sys
+modules = os.path.abspath("../")
+sys.path.append(modules)
 from bip32 import *
 
 words = "blossom educate state course sick fresh color divide number soap please pull glide weather join grit depart dynamic tenant leopard alter piano slight room"
@@ -9,7 +11,7 @@ senhas = "senhas.txt"
 #senhas = "vazio.txt"
 cont = 0
 WALLET = "bc1qcyrndzgy036f6ax370g8zyvlw86ulawgt0246r"
-#WALLET_TESTE = "bc1q57euh23y3qs2f9d5mtwpax5lqecfvrdkqce82a"
+#WALLET_TESTE = "bc1q9w3uakmu84exvnaj22aka7kr29mugrsjlv7hkv"
 
 
 with open(senhas, errors='ignore') as file:
@@ -22,7 +24,7 @@ with open(senhas, errors='ignore') as file:
 
         resp = gera_dados_carteira(words, line)
         #resp = gera_dados_carteira("erase sausage virtual little gym eagle swift stone journey obtain parade")
-        print(resp)
+        #print(resp)
         if WALLET in resp:
             print("----ACHEI----")
             break
